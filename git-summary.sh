@@ -18,12 +18,6 @@
 
 cwd=$(pwd)
 
-function get_screen_resolution_x {
-	echo $(xdpyinfo | awk -F '[ x]+' '/dimensions:/{print $3}')
-}
-
-screenwidth=$(get_screen_resolution_x)
-
 function printseparator {
 	printf '%*s\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' =
 }
